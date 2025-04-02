@@ -3,15 +3,19 @@ name: volume
 description: Volume plugin to control device VOLUME for Android. Pull request for IOS implementation is welcome. 
 version: 1.0.1
 homepage: https://github.com/aman-malhotra-1999/Volume_Flutter.git
+publish_to: none # Mark as non-publishable to allow Git dependencies
 
 environment:
-  sdk: ">=2.0.0 <3.0.0"
-  flutter: ^1.10.0
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.29.0"
 dependencies:
   flutter:
     sdk: flutter
     
-  system_shortcuts: ^1.0.0
+  system_shortcuts:
+    git:
+      url: https://github.com/DevTello/SystemShortcutsFlutter_updated
+      ref: 4c0152fc0c8fa1253b73a4055bccfafe1cf239fc
 
 flutter:
   plugin:

@@ -1,4 +1,3 @@
-
 package com.example.volume;
 
 import android.app.Activity;
@@ -14,7 +13,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * VolumePlugin
@@ -60,16 +58,6 @@ public class VolumePlugin implements FlutterPlugin, ActivityAware, MethodCallHan
     @Override
     public void onDetachedFromActivityForConfigChanges() {
         activity = null;
-    }
-
-    /**
-     * Deprecated plugin registration.
-     */
-    public static void registerWith(Registrar registrar) {
-        VolumePlugin instance = new VolumePlugin();
-        instance.channel = new MethodChannel(registrar.messenger(), "volume");
-        instance.activity = registrar.activity();
-        instance.channel.setMethodCallHandler(instance);
     }
 
     @Override

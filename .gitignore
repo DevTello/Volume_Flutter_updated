@@ -1,6 +1,4 @@
 
-
-
 # Created by https://www.gitignore.io/api/dart,android,flutter,androidstudio
 # Edit at https://www.gitignore.io/?templates=dart,android,flutter,androidstudio
 
@@ -40,6 +38,9 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+# VSCode
+.vscode/
 
 # IntelliJ
 *.iml
@@ -126,7 +127,6 @@ doc/api/
 .pub-cache/
 .pub/
 flutter_export_environment.sh
-
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -279,3 +279,6 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.gitignore.io/api/dart,android,flutter,androidstudio
+
+# FVM Version Cache
+.fvm/

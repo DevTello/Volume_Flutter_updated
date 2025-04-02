@@ -89,8 +89,7 @@ class Volume {
   /// where value of 'i' is less then Volume.getMaxVol
   ///
   /// value of showVolumeUI can have two values [ShowVolumeUI.SHOW] and [ShowVolumeUI.HIDE]
-  static Future<int> setVol(int i,
-      {ShowVolumeUI showVolumeUI = ShowVolumeUI.SHOW}) async {
+  static Future<int> setVol(int i, {ShowVolumeUI showVolumeUI = ShowVolumeUI.SHOW}) async {
     Map<String, int> map = <String, int>{};
     map.putIfAbsent("newVol", () {
       return i;
@@ -124,31 +123,16 @@ class Volume {
 }
 
 int _getShowVolumeUiInt(ShowVolumeUI showVolumeUI) {
-  switch (showVolumeUI) {
-    case ShowVolumeUI.SHOW:
-      return 1;
-    case ShowVolumeUI.HIDE:
-      return 0;
-    default:
-      return 1;
-  }
+  return switch (showVolumeUI) { ShowVolumeUI.SHOW => 1, ShowVolumeUI.HIDE => 0 };
 }
 
 int _getStreamInt(AudioManager audioManager) {
-  switch (audioManager) {
-    case AudioManager.STREAM_VOICE_CALL:
-      return 0;
-    case AudioManager.STREAM_SYSTEM:
-      return 1;
-    case AudioManager.STREAM_RING:
-      return 2;
-    case AudioManager.STREAM_MUSIC:
-      return 3;
-    case AudioManager.STREAM_ALARM:
-      return 4;
-    case AudioManager.STREAM_NOTIFICATION:
-      return 5;
-    default:
-      return null;
-  }
+  return switch (audioManager) {
+    AudioManager.STREAM_VOICE_CALL => 0,
+    AudioManager.STREAM_SYSTEM => 1,
+    AudioManager.STREAM_RING => 2,
+    AudioManager.STREAM_MUSIC => 3,
+    AudioManager.STREAM_ALARM => 4,
+    AudioManager.STREAM_NOTIFICATION => 5
+  };
 }
