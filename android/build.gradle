@@ -1,28 +1,15 @@
+plugins {
+    id 'com.android.library'
+}
 
 group 'com.example.volume'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
-    }
-}
-rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-apply plugin: 'com.android.library'
-
 android {
-    compileSdkVersion 29
+    compileSdkVersion 34
+
+    // Add namespace for AGP 8.0+
+    namespace "com.example.volume"
 
     defaultConfig {
         minSdkVersion 16
